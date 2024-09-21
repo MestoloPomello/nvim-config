@@ -1,2 +1,2 @@
-- Linux: ~\.config\nvim
-- Windows: C:\Users\<user>\AppData\Local\nvim
+- Linux: `~\.config\nvim`
+- Windows: `C:\Users\<user>\AppData\Local\nvim`
