@@ -1,0 +1,2 @@
+- Linux: ~\.config\nvim
+- Windows: C:\Users\<user>\AppData\Local\nvim
