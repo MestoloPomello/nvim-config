@@ -18,13 +18,13 @@ return {
 		"hrsh7th/nvim-cmp",
 		config = function()
 			local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-			local cmp = require 'cmp'
+			local cmp = require('cmp')
 			require("luasnip.loaders.from_vscode").lazy_load()
 
 			cmp.setup({
 				snippet = {
 					expand = function(args)
-						require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+						require('luasnip').lsp_expand(args.body)
 					end,
 				},
 				window = {
@@ -39,8 +39,9 @@ return {
 					['<CR>'] = cmp.mapping.confirm({ select = true }),
 				}),
 				sources = cmp.config.sources({
-					-- { name = 'nvim_lsp' },
-					{ name = 'luasnip' }, -- For luasnip users.
+					{ name = 'nvim_lsp' },
+					{ name = 'luasnip' },
+					{ name = 'nvim_lsp_signature_help' } -- ToDo sistemare
 				}, {
 					{ name = 'buffer' },
 				})
