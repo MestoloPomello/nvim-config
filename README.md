@@ -10,5 +10,5 @@ Utils:
 
 Comment block:
 1. `<C-V>` to select the block
-2. `<Shift-I>` to insert before each line
+2. `<I>` to insert before each line
 3. `Esc` to apply
