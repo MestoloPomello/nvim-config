@@ -9,6 +9,6 @@ Utils:
 - `gf`: go to file (or autoformat)
 
 Comment block:
-1. `<C-V>` to select the block
+1. `<C-V>` to select the block (or `<C-Q>` on Windows)
 2. `<I>` to insert before each line
 3. `Esc` to apply
