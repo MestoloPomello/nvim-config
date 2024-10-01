@@ -1,6 +1,8 @@
 - Linux: `~\.config\nvim`
 - Windows: `C:\Users\<user>\AppData\Local\nvim`
 
+`<leader>` is currently `<Space>`.
+
 Utils:
 - `gc<leader>`: comment selection 
 - `gt`: go to next tab 
@@ -16,3 +18,6 @@ Comment block (with block selection):
 Comment block/lines (alternative):
 1. `<C-V>` or `<C-v>` to select the block/lines
 2. `gc` to comment/uncomment the selection
+
+Custom commands:
+- `<leader>rs`: **r**ename **s**ymbol
