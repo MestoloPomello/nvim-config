@@ -37,6 +37,7 @@ Alternative block comment (with block selection):
 Custom commands:
 - `<leader>rs`: **r**ename **s**ymbol
 - `<leader>fm`: **f**or**m**at buffer 
+- `<leader>e`: show full **e**rror
 
 ---
 

@@ -10,3 +10,4 @@ vim.g.mapleader = " "
 
 -- Commands
 vim.keymap.set("n", "<leader>rs", vim.lsp.buf.rename, {})
+vim.keymap.set('n', '<leader>e', vim.diagnostic.goto_next, {})
