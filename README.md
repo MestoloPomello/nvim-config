@@ -28,7 +28,7 @@ Search/Replace with smartcase on:
 ---
 
 Alternative block comment (with block selection):
-1. `<C-V>` to select the block (or `<C-Q>` on Windows)
+1. `<C-V>` to select the block (or `<C-q>` on Windows)
 2. `<I>` to insert before each line
 3. `Esc` to apply
 
