@@ -11,6 +11,7 @@ return {
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
 		config = function ()
+			-- Part of the path_display workaround
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = "TelescopeResults",
 				callback = function(ctx)
@@ -21,6 +22,7 @@ return {
 				end,
 			})
 
+			-- Part of the path_display workaround
 			local function filenameFirst(_, path)
 				local tail = vim.fs.basename(path)
 				local parent = vim.fs.dirname(path)
@@ -29,6 +31,10 @@ return {
 			end
 
 			require("telescope").setup({
+				defaults = {
+					layout_strategy = "vertical",
+					-- path_display = { "filename_first" } -- Uncomment when it starts working
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown {
@@ -38,7 +44,7 @@ return {
 				file_ignore_patterns = {
 					"^node%_modules/.*"
 				},
-				pickers = {
+				pickers = { -- Part of the path_display workaround
 					find_files = {
 						path_display = filenameFirst,
 					}
