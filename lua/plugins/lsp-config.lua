@@ -1,18 +1,27 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		config = function ()
-			require("mason").setup({
-				PATH = "prepend"
-			})
-		end
+		opts = {
+			PATH = "prepend"
+		}
+		-- config = function ()
+		-- 	require("mason").setup({
+		-- 		PATH = "prepend"
+		-- 	})
+		-- end
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function ()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls" }
+				ensure_installed = { "lua_ls", "ts_ls", "jdtls" }
 			})
+		end
+	},
+	{
+		"nvim-java/nvim-java",
+		config = function ()
+			require("java").setup()
 		end
 	},
 	{
@@ -27,6 +36,7 @@ return {
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities
 			})
+			lspconfig.jdtls.setup({})
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 			vim.keymap.set({ 'n' }, '<leader>ca', vim.lsp.buf.code_action, {})
