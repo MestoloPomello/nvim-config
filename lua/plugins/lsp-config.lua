@@ -1,6 +1,6 @@
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		opts = {
 			PATH = "prepend"
 		}
@@ -11,23 +11,24 @@ return {
 		-- end
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function ()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"ts_ls",
-					"jdtls",
-					"pylsp"
-				}
-			})
-		end
-	},
-	{
-		"nvim-java/nvim-java",
-		config = function ()
-			require("java").setup()
-		end
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = { "neovim/nvim-lspconfig" },
+		opts = {
+			ensure_installed = {
+				"lua_ls",
+				"ts_ls",
+				"pylsp"
+			}
+		}
+		-- config = function ()
+		-- 	require("mason-lspconfig").setup({
+		-- 		ensure_installed = {
+		-- 			"lua_ls",
+		-- 			"ts_ls",
+		-- 			"pylsp"
+		-- 		}
+		-- 	})
+		-- end
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -39,9 +40,6 @@ return {
 				capabilities = capabilities
 			})
 			lspconfig.ts_ls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.jdtls.setup({
 				capabilities = capabilities
 			})
 			lspconfig.pylsp.setup({
